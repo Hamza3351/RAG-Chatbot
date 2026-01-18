@@ -94,13 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const question = userInput.value.trim();
         if (!question || !documentLoaded) return;
 
-        // Hide Welcome Hero on first message if not already hidden
         if (welcomeHero) welcomeHero.style.display = 'none';
 
         addUserMessage(question);
         userInput.value = '';
 
-        // Add loading indicator
         const loadingDiv = document.createElement('div');
         loadingDiv.className = 'message bot loading-msg';
         loadingDiv.innerHTML = `
@@ -179,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     clearBtn.addEventListener('click', () => {
         if (confirm("Start a new conversation?")) {
-            location.reload(); // Simplest way to reset state
+            location.reload();
         }
     });
 });
