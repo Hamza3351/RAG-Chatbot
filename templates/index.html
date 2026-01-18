@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Document Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Minimal Header -->
+        <header class="chat-header">
+            <div class="logo-area">
+                <i class="fas fa-sparkles fa-lg" style="color: #3b82f6;"></i>
+                <h1>AI Assistant</h1>
+            </div>
+            <div class="header-actions">
+                <div class="status-badge">
+                    <div class="dot"></div>
+                    <span>Ready</span>
+                </div>
+                <button id="clear-chat" title="New Chat"><i class="fas fa-trash"></i></button>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <main class="chat-messages" id="chat-messages">
+            <!-- Welcome Hero (Visible by default) -->
+            <div class="welcome-hero" id="welcome-hero">
+                <h2><span class="title-text">Welcome, User!</span> <span class="wave">👋</span></h2>
+                <p class="subtext">How can I help you today?</p>
+            </div>
+        </main>
+
+        <!-- Minimal Chat Input -->
+        <footer class="input-section">
+            <div id="upload-status" class="status-indicator"></div>
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <!-- Integrated Attachment -->
+                    <div class="attachment-btn" id="attach-btn" title="Add PDF">
+                        <i class="fas fa-plus"></i>
+                        <input type="file" id="file-input" hidden accept=".pdf">
+                    </div>
+
+                    <input type="text" id="user-input"
+                        placeholder="Ask or search for anything from the document. Use + to add a PDF..." disabled>
+
+                    <button id="send-btn" disabled>
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
